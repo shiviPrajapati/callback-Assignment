@@ -73,7 +73,7 @@ function deleteFile(path, callBack) {
     fs.unlink(path,callBack);
 };
 
-module.exports = {createRandomDirectory, createJsonFiles, deleteFile};
+ module.exports = {createRandomDirectory, createJsonFiles, deleteFile};
 
 
 

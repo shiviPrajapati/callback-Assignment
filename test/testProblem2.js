@@ -1,3 +1,11 @@
-const callProblem2 = require ("../problem2.js");
+const test = require ("../problem2.js");
 
-callProblem2('./lipsum.txt');
+test.readfile ('lipsum.txt', () => {
+    test.fileOfUpperCase('lipsum.txt', "./convertToUpperCase.txt", () => {
+        test.fileForSentences("./convertToUpperCase.txt", "splitIntoSentences.txt", () => {
+            test.fileOfSortedSentences ("splitIntoSentences.txt", "sortFile.txt", () => {
+                test.deleteAllCreatedFile ('./test/filenames.txt',)
+            })
+        })
+    })
+}) 

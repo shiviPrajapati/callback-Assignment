@@ -109,8 +109,7 @@ function fileOfUpperCase(fileRead, fileWrite, callback) {
         let upperData = data.toString().toUpperCase()
         fs.writeFile(fileWrite, upperData, callback)
         console.log("The uppercase file was saved!");
-        fileNames = "convertToUpperCase.txt\n"
-        fs.writeFile('./test/filenames.txt', fileNames.toString(), function (err) {
+        fs.writeFile('./test/filenames.txt', fileWrite.toString()+'\n', function (err) {
             if (err) {
                 console.log(err);
             }
@@ -129,8 +128,7 @@ function fileForSentences(fileRead, fileWrite, callback) {
         data = data.split(".").join("\n");
         fs.writeFile(fileWrite, data, callback)
         console.log("The split file was saved!");
-        fileNames = "splitIntoSentences.txt\n";
-        fs.appendFile('./test/filenames.txt', fileNames.toString(), function (err) {
+        fs.appendFile('./test/filenames.txt', fileWrite.toString()+'\n', function (err) {
             if (err) console.log(err);
             console.log("split file name saved.")
         });
@@ -151,8 +149,7 @@ function fileOfSortedSentences(fileRead, fileWrite, callback) {
         }
         fs.writeFile(fileWrite, sortString(str), callback)
         console.log("The sort file was saved!");
-        fileNames = "sortFile.txt\n";
-        fs.appendFile('./test/filenames.txt', fileNames.toString(), function (err) {
+        fs.appendFile('./test/filenames.txt', fileWrite.toString()+'\n', function (err) {
             if (err) console.log(err);
             console.log("sort file name saved.")
         })
